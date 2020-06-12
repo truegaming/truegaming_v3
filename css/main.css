@@ -19035,6 +19035,13 @@ input:checked+label::after {
   cursor: pointer;
 }
 
+.night-mobile {
+  background-color: transparent !important;
+  top: -100px;
+  width: 25px;
+  height: 24px;
+}
+
 .wrapper-section {
   background-color: var(--bg);
 }
@@ -19074,10 +19081,6 @@ p {
 .custom-color {
   color: var(--color-indigo) !important;
 }
-
-/* .btn-change {
-    background-color: var(--color-slider) !important;
-} */
 
 .author {
   background-color: var(--bg-author) !important;

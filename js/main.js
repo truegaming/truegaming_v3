@@ -183,12 +183,19 @@ const getStyle = (element, style) =>
     .getPropertyValue(style); // containing the value of a specified CSS property.
 
 const initialColors = {
+    // Main Background 
     bg: getStyle(html, "--bg"),
+    // Title Color
     colorHeadings: getStyle(html, "--color-headings"),
+    // Text Color
     colorText: getStyle(html, "--color-text"),
+    // Tags Color Background and Border
     tag: getStyle(html, "--tag"),
+    // Bottom Tags Border Color
     colorBorder: getStyle(html, "--color-border"),
+    // Color Button Show More
     showMore: getStyle(html, "--show-more"),
+    // Color in hover 
     colorHover: getStyle(html, "--color-hover"),
     colorIndigo: getStyle(html, "--color-indigo"),
     colorSlider: getStyle(html, "---color-slider"),
@@ -211,7 +218,6 @@ const darkMode = {
     bgAuthor: "#293347",
     colorDescription: "#a0aec0",
     bgArticle: "transparent",
-
 }
 
 const transformKey = key =>
