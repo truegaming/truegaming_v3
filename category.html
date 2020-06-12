@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <title>TrueGaming V3</title>
+</head>
+
+<body>
+    <div class="fold relative">
+        <header class="bg-menu text-gray-700 body-font absolute py-1 left-0 right-0 z-20" style="top:30px;">
+            <div class="container mx-auto flex flex-wrap">
+                <a href="#" class="flex title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
+                    <img class="h-10 mr-2 lg:mr-0 mt-1 lg:mt-0" src="css/img/tg_logo_big.png" alt="">
+                </a>
+                <div class="block lg:hidden">
+                    <button onclick="toggleMenu()" class="flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white mt-2 ml-2">
+                        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <title>Menu</title>
+                            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto show-menu lg:bg-transparent bg-gray-800 hidden lg:visible lg:px-0 px-4 lg:text-right text-center ">
+                    <nav class="lg:flex-grow lg:flex block">
+                        <ul class="lg:flex-grow lg:flex block">
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans"><i class="fas fa-home"></i></a>
+                            </li>
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">أخبار</a>
+                            </li>
+                            <li class="menu-element" style="position: relative">
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">مراجعات</a>
+                                <ul class="top-0 submenu-element sub-menu relative lg:absolute text-white bg-red-600 p-6 text-lg flex flex-wrap w-full lg:w-64 justify-between items-center top-0" style="right: 0; left: auto;">
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">جميع المراجعات</a></li>
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">PC</a></li>
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">PlayStation 4</a></li>
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">Switch</a></li>
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">Xbox One</a></li>
+                                    <li style="position: relative" class="w-1/2 text-center menu-element"><a href="#" class="w-full block font-araby-bold text-base leading-snug lg:mt-0 text-white rounded rounded-b hover:text-white hover:bg-red-700 h-12 border-transparent hover:border-red-600 px-2">هواتف</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">فيديو</a>
+                            </li>
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">تقارير</a>
+                            </li>
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">منتديات</a>
+                            </li>
+                            <li>
+                                <a class="block font-araby-bold text-base leading-3 lg:mt-0 text-white hover:text-white h-12 border-b-4 border-transparent hover:border-red-600 px-2 trans">مواعيد الإصدار</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                    <div class="relative text-white ml-4">
+                        <form id="searchform" method="get" action="#">
+                            <input type="search" name="s" placeholder="ابحث في الموقع" class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold" value="">
+                            <button type="submit" class="custom-color-text absolute right-0 top-0 mt-2 mr-4 text-red-600">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class="social-media-section text-gray-700 py-2 pr-2">
+                        <a href="#" class="" target="_blank"><i class="fab fa-instagram icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
+                        <a href="#" class="" target="_blank"><i class="fab fa-twitter icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
+                        <a href="#" class="" target="_blank"><i class="fab fa-youtube icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
+                    </div>
+                    <div class="mr-2 lg:mt-0 lg:mb-0 mt-2 mb-2 text-center mx-auto">
+                        <input id="switch" type="checkbox" name="theme" class="hidden">
+                        <label class="text-center mx-auto" for="switch"></label>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div class="relative">
+            <div class="slider-section w-full bg-no-repeat pt-40 pb-4" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), center / cover url( https://cdn.jsdelivr.net/gh/truegaming/pubic_site_content@prod26feb19b/img/Article-Header.jpg )">
+                <div class="breadcrumbs container mx-auto flex flex-wrap lg:flex md:flex inline-block items-center px-4 text-white">
+                    <div class="text-white font-araby-bold ml-4">
+                        <a class="" href="#">
+                            <span>الرئيسية</span>
+                        </a>
+                    </div>
+                    <div class="text-white font-araby-bold ml-4">
+                        <span class="align-middle">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                    </div>
+                    <div class="text-white font-araby-bold ml-4">الألعاب</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="main" class="wrapper-section bg-sectiongray">
+        <div class="lg:flex block container mx-auto">
+            <div class="content-side lg:w-contentSide w-full">
+                <div class="container px-5 pt-24 mx-auto">
+                    <div class="flex items-center justify-between relative mb-4 ">
+                        <div class="color-border flex-shrink-0 tag-red bg-red-600 text-white border-2 border-red-600 px-6 py-1 rounded-t-full rounded-l-full font-araby-regular">
+                            مراجعات </div>
+                        <div class="color-border border-b-2 border-red-600 absolute bottom-0" style="left: 25px; right: 17px;"></div>
+                    </div>
+                    <section class="text-gray-700 body-font overflow-hidden">
+                        <div class="articles-container block md:flex lg:block md:flex-wrap justify-between">
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative bgcustom">
+                                <div class="lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </div>
+                                <div class="md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative bgcustom">
+                                <div class="lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </div>
+                                <div class="md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative bgcustom">
+                                <div class="lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </div>
+                                <div class="md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative bgcustom">
+                                <div class="lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </div>
+                                <div class="md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="a lg:flex block items-center text-center border-b-2 border-t-2 border-gray-500 py-1 justify-center mb-4 font-araby-regular">عرض المزيد</span>
+                    </section>
+                </div>
+            </div>
+            <div class="sidebar-side lg:w-sidebarSide w-full px-4 lg:px-0 pb-4">
+                <div class="sidebar-widget bg-black bg-no-repeat bg-center mb-6 bg-cover rounded-lg p-6 text-white lg:mt-24" style="background: center / cover url('css/img/sidebar.jpg');">
+                    <div class="sidebar-widget-header flex items-center justify-between mb-6 font-araby-regular">
+                        <div class="sidebar-widget-header-right tag-red line-border bg-red-600 border-red-600 border-2 rounded-t-full rounded-l-full px-3 py-1 font-araby-regular">
+                            مدونة الأعضاء
+                        </div>
+                        <a href="#" class="sidebar-widget-header-left bg-transparent border-gray-400 text-gray-400 border-2 rounded-t-full rounded-r-full px-3 py-1 font-araby-regular">عرض
+                             الكل
+                             </a>
+                    </div>
+                    <div class="flex items-center my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url(https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg);">
+                        </a>
+                        <div class="text-sm px-2  flex-grow-0">
+                            <a href="#" class="text-white text-lg leading-none">مراجعة Odin Sphere Leifthrasir</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url(https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg);">
+                        </a>
+                        <div class="text-sm px-2  flex-grow-0">
+                            <a href="#" class="text-white text-lg leading-none">مراجعة Odin Sphere Leifthrasir</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url(https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg);">
+                        </a>
+                        <div class="text-sm px-2  flex-grow-0">
+                            <a href="#" class="text-white text-lg leading-none">مراجعة Odin Sphere Leifthrasir</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url(https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg);">
+                        </a>
+                        <div class="text-sm px-2  flex-grow-0">
+                            <a href="#" class="text-white text-lg leading-none">مراجعة Odin Sphere Leifthrasir</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url(https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg);">
+                        </a>
+                        <div class="text-sm px-2  flex-grow-0">
+                            <a href="#" class="text-white text-lg leading-none">مراجعة Odin Sphere Leifthrasir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="sidebar-widget bg-black bg-no-repeat bg-center bg-cover rounded-lg p-6 text-white" style="background: center / cover url('css/img/sidebar.jpg');">
+                    <div class="sidebar-widget-header flex items-center justify-between mb-6 font-araby-regular">
+                        <div class="sidebar-widget-header-right tag-red line-border bg-red-600 border-red-600 border-2 rounded-t-full rounded-l-full px-3 py-1 font-araby-regular">
+                            الأكثر شعبية
+                        </div>
+                        <a href="#" class="sidebar-widget-header-left bg-transparent border-gray-400 text-gray-400 border-2 rounded-t-full rounded-r-full px-3 py-1 font-araby-regular">عرض
+                         الكل
+                         </a>
+                    </div>
+                    <div class="flex items-center justify-between my-4 font-araby-regular">
+                        <a href="#" class="flex-grow-0  flex-shrink-0 w-4/12 h-12 bg-no-repeat bg-center bg-cover rounded-card" style="background: center / cover url('https://www.mobygames.com/images/covers/l/441153-odin-sphere-leifthrasir-playstation-3-front-cover.jpg');">
+                        </a>
+
+                        <div class="text-sm px-2">
+                            <a href="#" class="text-white text-base leading-none">Shinji Mikami: مشروع لعبة Ghostwire: Tokyo هو أطول فترة قضيتها بتطوير لعبة!</a>
+                        </div>
+                        <div class="px-4 review-circle-widget border-4 rounded-full color-border border-red-600 align-middle text-center text-2xl" style="line-height: 2.5rem">
+                            1
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-gray-700 body-font" style="background: linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.4)),center / cover url('https://www.true-gaming.net/home/wp-content/themes/TrueGamingEvolution/style/img/footer_HQ_PNG.png');">
+        <div class="container px-5 lg:py-24 pt-10 mx-auto">
+            <div class="flex flex-wrap md:text-right text-center order-first ">
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                    <img class="h-10 mb-2 lg:mt-0 lg:mr-0 md:mr-0 mx-auto" src="css/img/tg_logo_big.png" alt="">
+                    <p class="text-gray-400 font-araby-bold text-lg">أخبار ألعاب الفيديو، مراجعات ألعاب الفيديو</p>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4 font-araby-regular">
+                    <nav class="list-none mb-10 ">
+                        <li>
+                            <a href="#" class="text-white hover:text-white">الرئيسية</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white hover:text-white">الاعلان</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-white hover:text-white">الاتصال بنا</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4 font-araby-regular">
+                    <nav class="list-none mb-10 ">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Home</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Advertise</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Fourth Link</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Privacy Statement</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-gray-400 ">Terms of Use</a>
+                        </li>
+                    </nav>
+                </div>
+                <div class="lg:w-1/4 md:w-1/2 w-full px-4 flex-no-wrap items-center justify-between font-araby-regular">
+                    <div class="title-font text-gray-400 mb-3 text-2xl">تابعنا أينما كنت</div>
+                    <p class="text-gray-300 mt-2 md:text-right text-center mb-4 font-araby-bold">تابع أخبار تروجيمج على تطبيقات
+                        <br class="lg:block hidden">الهواتف الذكية والتابلت
+                    </p>
+
+                    <div class="lg:flex block lg:flex-row md:flex-col">
+                        <button class="flex-shrink-0 bg-gray-200 inline-flex py-3 px-4 rounded-lg items-center hover:bg-gray-300 focus:outline-none lg:ml-2 lg:mb-0 mb-4 ">
+                          
+                          <span class="ml-4 flex items-start flex-col leading-none ">
+                            <span class="text-xs text-gray-600 mb-1 ">أحصل على تطبيق</span>
+                            <span class="title-font font-medium ">Google Play</span>
+                          </span>
+                          <svg xmlns="http://www.w3.org/2000/svg " fill="currentColor " class="w-6 h-6 " viewBox="0 0 512 512 ">
+                            <path d="M99.617 8.057a50.191 50.191 0 00-38.815-6.713l230.932 230.933 74.846-74.846L99.617 8.057zM32.139 20.116c-6.441 8.563-10.148 19.077-10.148 30.199v411.358c0 11.123 3.708 21.636 10.148 30.199l235.877-235.877L32.139
+                    20.116zM464.261 212.087l-67.266-37.637-81.544 81.544 81.548 81.548 67.273-37.64c16.117-9.03 25.738-25.442 25.738-43.908s-9.621-34.877-25.749-43.907zM291.733 279.711L60.815 510.629c3.786.891 7.639 1.371 11.492 1.371a50.275 50.275 0 0027.31-8.07l266.965-149.372-74.849-74.847z "></path>
+                          </svg>
+                        </button>
+
+                        <button class="flex-shrink-0 bg-gray-200 inline-flex py-3 px-4 rounded-lg items-center hover:bg-gray-300 focus:outline-none ">
+                          
+                          <span class="ml-4 flex items-start flex-col leading-none ">
+                            <span class="text-xs text-gray-600 mb-1 ">أحصل على تطبيق</span>
+                            <span class="title-font font-medium ">App Store</span>
+                          </span>
+                          <svg xmlns="http://www.w3.org/2000/svg " fill="currentColor " class="w-6 h-6 " viewBox="0 0 305 305 ">
+                            <path d="M40.74 112.12c-25.79 44.74-9.4 112.65 19.12 153.82C74.09 286.52 88.5 305 108.24 305c.37 0 .74 0 1.13-.02 9.27-.37 15.97-3.23 22.45-5.99 7.27-3.1 14.8-6.3 26.6-6.3 11.22 0 18.39 3.1 25.31 6.1 6.83 2.95 13.87 6 24.26
+                    5.81 22.23-.41 35.88-20.35 47.92-37.94a168.18 168.18 0 0021-43l.09-.28a2.5 2.5 0 00-1.33-3.06l-.18-.08c-3.92-1.6-38.26-16.84-38.62-58.36-.34-33.74 25.76-51.6 31-54.84l.24-.15a2.5 2.5 0 00.7-3.51c-18-26.37-45.62-30.34-56.73-30.82a50.04
+                    50.04 0 00-4.95-.24c-13.06 0-25.56 4.93-35.61 8.9-6.94 2.73-12.93 5.09-17.06 5.09-4.64 0-10.67-2.4-17.65-5.16-9.33-3.7-19.9-7.9-31.1-7.9l-.79.01c-26.03.38-50.62 15.27-64.18 38.86z "></path>
+                            <path d="M212.1 0c-15.76.64-34.67 10.35-45.97 23.58-9.6 11.13-19 29.68-16.52 48.38a2.5 2.5 0 002.29 2.17c1.06.08 2.15.12 3.23.12 15.41 0 32.04-8.52 43.4-22.25 11.94-14.5 17.99-33.1 16.16-49.77A2.52 2.52 0 00212.1 0z "></path>
+                          </svg>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="bg-black">
+            <div class="container mx-auto px-5 py-6 mx-auto items-center text-center">
+                <div class="custom-color block text-red-600 sm:mr-6 sm:mt-0 mt-4 font-araby-regular ml-2 text-center mb-2"> © 2020 - ترو جيمنج | جميع الحقوق محفوظة
+                </div>
+                <div class="block text-red-600 font-araby-regular text-center">
+                    <a href="https://itqan.do/" target="_blank" class="flex-shrink-0 bg-gray-200 inline-flex py-3 px-4 rounded-lg items-center hover:bg-gray-300 focus:outline-none mb-2">
+                        <span class="ml-4 flex items-start flex-col leading-none ">
+                          <span class="text-xs text-gray-600 mb-1 ">الموقع من تطوير</span>
+                        <span class="title-font font-medium text-gray-700">شركة ITQAN</span>
+                        </span>
+                        <img class="w-6 h-6" src="css/img/coding.svg" />
+                    </a>
+                    <p class="custom-color">
+                        التطبيق من تطوير <a class="custom-color text-red-600" href="https://ar.karizma.io/" target="_blank">Karizma</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/jquery-2.2.4.min.js "></script>
+    <script src="js/main.js "></script>
+    <script src="js/siema.js "></script>
+</body>
+
+</html>
