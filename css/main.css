@@ -19042,6 +19042,24 @@ input:checked+label::after {
   height: 24px;
 }
 
+.night-mobile::after {
+  content: '🌓' !important;
+  top: 3px;
+  right: 3px;
+  width: 25px;
+  height: 25px;
+  background-color: white;
+  border-radius: 90px;
+  transition: 0.3s;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+input:checked+.night-mobile::after {
+  transform: translateX(0px) !important;
+  content: '🌓' !important;
+}
+
 .wrapper-section {
   background-color: var(--bg);
 }
