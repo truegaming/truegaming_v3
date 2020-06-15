@@ -195,29 +195,32 @@ const initialColors = {
     colorBorder: getStyle(html, "--color-border"),
     // Color Button Show More
     showMore: getStyle(html, "--show-more"),
-    // Color in hover 
+    // Color Text Article Section in hover 
     colorHover: getStyle(html, "--color-hover"),
-    colorIndigo: getStyle(html, "--color-indigo"),
-    colorSlider: getStyle(html, "---color-slider"),
+    // Color Background section author 
     bgAuthor: getStyle(html, "--bg-author"),
+    // Color icon search Header and Text footer
+    colorIndigo: getStyle(html, "--color-indigo"),
+    // Color Text description
     colorDescription: getStyle(html, "--color-description"),
-    bgArticle: getStyle(html, "--bg-article"),
+    // Color border Red 2px for single page images
+    borderImages: getStyle(html, "--border-images"),
+    // Color border Red 1px for article images
+    borderRed: getStyle(html, "--border-red"),
 }
 
 const darkMode = {
     bg: "#000000",
-    colorBtn: "#e53e3e",
-    colorHeadings: "#e53e3e",
+    colorHeadings: "#fc8181",
     colorText: "#718096",
     tag: "#e53e3e",
     colorBorder: "#e53e3e",
     showMore: "#e53e3e",
     colorHover: "#e53e3e",
-    colorIndigo: "#e53e3e",
-    colorSlider: "rgba(180, 0, 0, 0.7)",
     bgAuthor: "#293347",
     colorDescription: "#a0aec0",
-    bgArticle: "transparent",
+    borderImages: "#e53e3e",
+    borderRed: "rgba(155, 78, 78, 0.4)",
 }
 
 const transformKey = key =>
@@ -262,4 +265,37 @@ if (getValeuLocalStorage('mode') === "initialColors") {
 } else {
     checkbox.setAttribute('checked', "");
     changeColors(darkMode);
+}
+
+
+// Menu Desktop And Mobile
+document.getElementById("MenuMobile").style.display = "none";
+
+function getScreenWidth() {
+    w = null;
+    if (window.screen != null) // window.screen object contains information about the user's screen.
+        w = window.screen.availWidth; // availWidth returns the width of the user's screen, in pixel
+    if (window.innerWidth != null)
+        w = window.innerWidth; // innerWidth returns the width of a window's content area.
+    if (document.body != null)
+        w = document.body.clientWidth; // clientWidth returns the viewable width of an element in pixels
+    return w;
+}
+
+window.addEventListener("load", onLoadPage);
+
+function onLoadPage() {
+    HideMenu();
+    window.addEventListener("resize", HideMenu);
+}
+HideMenu();
+
+function HideMenu() {
+    if (getScreenWidth() <= 1024) {
+        document.getElementById("MenuDesktop").style.display = "none";
+        document.getElementById("MenuMobile").style.display = "block";
+    } else {
+        document.getElementById("MenuDesktop").style.display = "flex";
+        document.getElementById("MenuMobile").style.display = "none";
+    }
 }

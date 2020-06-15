@@ -18602,13 +18602,13 @@ html {
   --color-hover: #e53e3e;
   --color-text: #4a5568;
   --tag: #e53e3e;
+  --color-indigo: #e53e3e;
   --color-border: #e53e3e;
   --show-more: #e53e3e;
-  --color-indigo: #e53e3e;
-  --color-slider: rgba(180, 0, 0, 0.7);
   --bg-author: #ffffff;
   --color-description: #4a5568;
-  --bg-article: "#d9d9d9";
+  --border-images: "tranparent";
+  --border-red: "tranparent";
 }
 
 figure {
@@ -18671,11 +18671,13 @@ figure {
 .entry-content figure img {
   display: block;
   margin: auto;
+  border: 2px solid var(--border-images);
 }
 
 .entry-content img {
   display: block;
   margin: auto;
+  border: 2px solid var(--border-images);
 }
 
 .entry-content .gallery {
@@ -18908,14 +18910,6 @@ ul.tabs li.current {
   border: 17px solid #d9d9d9;
 }
 
-.bgcustom {
-  background-color: transparent;
-}
-
-.bgcustom:hover {
-  background-color: var(--bg-article) !important;
-}
-
 @media (min-width: 1024px) {
   .submenu-element {
     top: 3rem !important;
@@ -19106,6 +19100,10 @@ p {
 
 .color-description {
   color: var(--color-description) !important;
+}
+
+.border-red {
+  border: 2px solid var(--border-red) !important;
 }
 
 @media (min-width: 640px) {
