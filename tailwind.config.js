@@ -7,7 +7,8 @@ module.exports = {
                 sectiongray: '#E5E5E5',
                 positiveIcon: '#60d874',
                 negativeIcon: '#ff6252',
-                conclusionIcon: '#f6b007'
+                conclusionIcon: '#f6b007',
+                bgSearch: "#2D3748",
 
             },
             lineHeight: {

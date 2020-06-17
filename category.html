@@ -11,9 +11,9 @@
 
 <body>
     <div class="fold relative">
-        <header class="bg-menu text-gray-700 body-font absolute py-1 left-0 right-0 z-20" style="top:30px;">
+        <header class="bg-menu text-gray-700 body-font absolute lg:py-0 py-1 left-0 right-0 z-20" style="top:30px;">
             <div id="MenuDesktop" class="container mx-auto flex flex-wrap">
-                <a href="#" class="flex title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
+                <a href="index.html" class="flex title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
                     <img class="h-10 mr-2 lg:mr-0 mt-1 lg:mt-0" src="css/img/tg_logo_big.png" alt="">
                 </a>
                 <div class="w-full flex-grow lg:flex block lg:items-center lg:w-auto lg:bg-transparent bg-gray-800 hidden lg:visible lg:px-0 px-4 lg:text-right text-center ">
@@ -53,10 +53,21 @@
                     </nav>
                     <div class="relative text-white ml-4">
                         <form id="searchform" method="get" action="#">
-                            <input type="search" name="s" placeholder="ابحث في الموقع" class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold" value="">
-                            <button type="submit" class="custom-color absolute right-0 top-0 mt-2 mr-4 text-red-600">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <div class="control z-50">
+                                <div class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold text-center">
+                                    ابحث في الموقع
+                                </div>
+                                <div class="btn-material z-50" style="top:-8px; right:-20px;">
+                                    <button type="submit" class="material-icons icon-material-search">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <!-- full screen form controls -->
+                                <div class="search-input py-64 z-50" style="left:50%">
+                                    <input type="search" name="s" class="input-search bg-transparent font-araby-bold focus:outline-none text-6xl" placeholder="ابحث في الموقع">
+                                </div>
+                            </div>
+                            <span class="icon-close material-icons z-50"><i class="far fa-times-circle"></i></span>
                         </form>
                     </div>
                     <div class="social-media-section text-gray-700 py-2 pr-2">
@@ -64,7 +75,7 @@
                         <a href="#" class="" target="_blank"><i class="fab fa-twitter icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
                         <a href="#" class="" target="_blank"><i class="fab fa-youtube icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
                     </div>
-                    <div class="mr-2 lg:mt-0 lg:mb-0 mt-2 mb-2 text-center mx-auto lg:block hidden">
+                    <div class="mr-2 lg:mt-0 lg:mb-0 mt-2 mb-2 text-center mx-auto lg:block hidden z-40">
                         <input id="switch" type="checkbox" name="theme" class="hidden">
                         <label class="text-center mx-auto" for="switch"></label>
                     </div>
@@ -72,7 +83,7 @@
             </div>
             <div id="MenuMobile" class="container mx-auto">
                 <div class="flex">
-                    <a href="#" class="block title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
+                    <a href="index.html" class="block title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
                         <img class="h-10 mr-2 lg:mr-0 mt-1 lg:mt-0" src="css/img/tg_logo_big.png" alt="">
                     </a>
                     <div class="block lg:hidden">
@@ -119,12 +130,23 @@
                         </ul>
 
                     </nav>
-                    <div class="relative text-white ml-4">
+                    <div class="text-white ml-4">
                         <form id="searchform" method="get" action="#">
-                            <input type="search" name="s" placeholder="ابحث في الموقع" class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold" value="">
-                            <button type="submit" class="custom-color absolute right-0 top-0 mt-2 mr-4 text-red-600">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <div class="w-full control py-4 relative">
+                                <div class="btn-material absolute bottom-0 top-0" style="background-color: #2d3748;">
+                                    <button type="submit" class="material-icons icon-material-search">
+                                            <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="focus:outline-none font-araby-bold text-center">
+                                    ابحث في الموقع
+                                </div>
+                            </div>
+                            <!-- full screen form controls -->
+                            <span class="icon-close material-icons"><i class="far fa-times-circle"></i></span>
+                            <div class="search-input md:text-5xl text-3xl left-0 right-0 top-0" style="margin-top: -25px;">
+                                <input type="search" name="s" class="input-search bg-transparent font-araby-bold focus:outline-none text-center" placeholder="ابحث في الموقع">
+                            </div>
                         </form>
                     </div>
                     <div class="social-media-section text-gray-700 py-2 pr-2">
@@ -162,244 +184,247 @@
             <div class="content-side lg:w-contentSide w-full">
                 <div class="container px-5 pt-24 mx-auto">
                     <div class="flex items-center justify-between relative mb-4 ">
-                        <div class="color-border flex-shrink-0 tag-red bg-red-600 text-white border-2 border-red-600 px-6 py-1 rounded-t-full rounded-l-full font-araby-regular">
+                        <div class="line-border flex-shrink-0 tag-red bg-red-600 text-white border-2 px-6 py-1 rounded-t-full rounded-l-full font-araby-regular ">
                             مراجعات </div>
-                        <div class="color-border border-b-2 border-red-600 absolute bottom-0" style="left: 25px; right: 17px;"></div>
+                        <div class="line-border tag-red border-b-2 borderN absolute bottom-0 " style="left: 25px; right: 17px; "></div>
                     </div>
-                    <div class="articles-container block md:flex lg:block md:flex-wrap justify-between">
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                    <section class="text-gray-700 body-font overflow-hidden">
+                        <div class="higher-container articles-container block md:flex lg:block md:flex-wrap justify-between">
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
                                 </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
                                         </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
                                     </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
+                                <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
+                                </a>
+                                <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
+                                    <a href="#">
+                                        <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
+                                    </a>
+                                    <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
+                                    <div class="lg:flex justify-between flex-wrap font-araby-bold">
+                                        <div class="mb-2 lg:mb-0">
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-clock align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
+                                            </div>
+                                            <div class="inline-block ml-2">
+                                                <i class="text-gray-500 far fa-comment align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">170</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <i class="text-gray-500 far fa-eye align-middle"></i>
+                                                <span class="text-gray-500 align-middle mr-1">76</span>
+                                            </div>
+                                        </div>
+                                        <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
+                                            اقرأ أكثر
+                                            </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-single article-single-hover w-full md:w-1/2 lg:w-full lg:max-w-full lg:flex block border-b-2 border-gray-500 lg:pb-4 pb-0 pt-4 relative">
-                            <a href="#" class="lg:mx-0 mx-4 border-red lg:h-auto lg:w-64 h-64 lg:flex-none block rounded-t lg:rounded-card text-center relative lg:mb-0 mb-2" style="background: center / cover url(https://www.true-gaming.net/home/wp-content/uploads/2019/02/الملخص-الأسبوعي.jpg);">
-                            </a>
-                            <div class="lg:mx-0 mx-4 md:flex-grow px-4 lg:text-right md:text-right text-center">
-                                <a href="#">
-                                    <h2 class="text-2xl font-medium text-gray-900 title-font mb-2 font-araby-bold ">نقاش الأسبوع: هل تعجّلت Sony بقرار السماح لألعابها بالصدور على الحاسب الشخصي؟</h2>
-                                </a>
-                                <p class="hidden md:block text-gray-700 text-base font-araby-regular">لاحظ اللاعبون سماح سوني بنقل ألعاب الطرف الأوّل منها إلى منصّة الحاسب الشخصي بنظام الويندوز، الأمر اقتصر في بداية الأمر على الألعاب التي تعاونت فيها سوني مع الطرف الثالث، ثم امتدّ ليشمل ألعابًا تملك س…</p>
-                                <div class="lg:flex justify-between flex-wrap font-araby-bold">
-                                    <div class="mb-2 lg:mb-0">
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-clock align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">05/6/2020</span>
-                                        </div>
-                                        <div class="inline-block ml-2">
-                                            <i class="text-gray-500 far fa-comment align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">170</span>
-                                        </div>
-                                        <div class="inline-block">
-                                            <i class="text-gray-500 far fa-eye align-middle"></i>
-                                            <span class="text-gray-500 align-middle mr-1">76</span>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="hidden lg:block flex-shrink-0 tag-gray bg-transparent border-2 border-gray-500 inline-block px-6 py-1 rounded-t-full rounded-r-full text-gray-500">
-                                        اقرأ أكثر
-                                        </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        <span class="a lg:flex block items-center text-center border-b-2 border-t-2 border-gray-500 py-1 justify-center mb-4 font-araby-regular ">عرض المزيد</span>
+                    </section>
                 </div>
             </div>
             <div class="sidebar-side lg:w-sidebarSide w-full px-4 lg:px-0 pb-4">

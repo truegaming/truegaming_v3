@@ -11,9 +11,9 @@
 
 <body>
     <div class="fold relative">
-        <header class="bg-menu text-gray-700 body-font absolute py-1 left-0 right-0 z-20" style="top:30px;">
+        <header class="bg-menu text-gray-700 body-font absolute lg:py-0 py-1 left-0 right-0 z-20" style="top:30px;">
             <div id="MenuDesktop" class="container mx-auto flex flex-wrap">
-                <a href="#" class="flex title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
+                <a href="index.html" class="flex title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
                     <img class="h-10 mr-2 lg:mr-0 mt-1 lg:mt-0" src="css/img/tg_logo_big.png" alt="">
                 </a>
                 <div class="w-full flex-grow lg:flex block lg:items-center lg:w-auto lg:bg-transparent bg-gray-800 hidden lg:visible lg:px-0 px-4 lg:text-right text-center ">
@@ -53,10 +53,21 @@
                     </nav>
                     <div class="relative text-white ml-4">
                         <form id="searchform" method="get" action="#">
-                            <input type="search" name="s" placeholder="ابحث في الموقع" class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold" value="">
-                            <button type="submit" class="custom-color absolute right-0 top-0 mt-2 mr-4 text-red-600">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <div class="control z-50">
+                                <div class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold text-center">
+                                    ابحث في الموقع
+                                </div>
+                                <div class="btn-material z-50" style="top:-8px; right:-20px;">
+                                    <button type="submit" class="material-icons icon-material-search">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <!-- full screen form controls -->
+                                <div class="search-input py-64 z-50" style="left:50%">
+                                    <input type="search" name="s" class="input-search bg-transparent font-araby-bold focus:outline-none text-6xl" placeholder="ابحث في الموقع">
+                                </div>
+                            </div>
+                            <span class="icon-close material-icons z-50"><i class="far fa-times-circle"></i></span>
                         </form>
                     </div>
                     <div class="social-media-section text-gray-700 py-2 pr-2">
@@ -64,7 +75,7 @@
                         <a href="#" class="" target="_blank"><i class="fab fa-twitter icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
                         <a href="#" class="" target="_blank"><i class="fab fa-youtube icons-social-media flex-shrink-0 bg-gray-300 rounded-full"></i></a>
                     </div>
-                    <div class="mr-2 lg:mt-0 lg:mb-0 mt-2 mb-2 text-center mx-auto lg:block hidden">
+                    <div class="mr-2 lg:mt-0 lg:mb-0 mt-2 mb-2 text-center mx-auto lg:block hidden z-40">
                         <input id="switch" type="checkbox" name="theme" class="hidden">
                         <label class="text-center mx-auto" for="switch"></label>
                     </div>
@@ -72,7 +83,7 @@
             </div>
             <div id="MenuMobile" class="container mx-auto">
                 <div class="flex">
-                    <a href="#" class="block title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
+                    <a href="index.html" class="block title-font font-medium items-center md:mb-0 lg:ml-6 mx-auto">
                         <img class="h-10 mr-2 lg:mr-0 mt-1 lg:mt-0" src="css/img/tg_logo_big.png" alt="">
                     </a>
                     <div class="block lg:hidden">
@@ -119,12 +130,23 @@
                         </ul>
 
                     </nav>
-                    <div class="relative text-white ml-4">
+                    <div class="text-white ml-4">
                         <form id="searchform" method="get" action="#">
-                            <input type="search" name="s" placeholder="ابحث في الموقع" class="w-40 bg-transparent h-8 pr-10 rounded-full focus:outline-none font-araby-bold" value="">
-                            <button type="submit" class="custom-color absolute right-0 top-0 mt-2 mr-4 text-red-600">
-                                <i class="fas fa-search"></i>
-                            </button>
+                            <div class="w-full control py-4 relative">
+                                <div class="btn-material absolute bottom-0 top-0" style="background-color: #2d3748;">
+                                    <button type="submit" class="material-icons icon-material-search">
+                                            <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                                <div class="focus:outline-none font-araby-bold text-center">
+                                    ابحث في الموقع
+                                </div>
+                            </div>
+                            <!-- full screen form controls -->
+                            <span class="icon-close material-icons"><i class="far fa-times-circle"></i></span>
+                            <div class="search-input md:text-5xl text-3xl left-0 right-0 top-0" style="margin-top: -25px;">
+                                <input type="search" name="s" class="input-search bg-transparent font-araby-bold focus:outline-none text-center" placeholder="ابحث في الموقع">
+                            </div>
                         </form>
                     </div>
                     <div class="social-media-section text-gray-700 py-2 pr-2">

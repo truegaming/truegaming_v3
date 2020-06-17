@@ -542,3 +542,125 @@ p {
 .border-red {
     border: 2px solid var(--border-red) !important;
 }
+
+
+/* Fullscreen Search*/
+
+body.search-active {
+    overflow: hidden;
+}
+
+body.search-active .search-input {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+}
+
+body.search-active .icon-close {
+    opacity: 1;
+    transform: rotate(-90deg);
+}
+
+body.search-active .control {
+    cursor: default;
+}
+
+body.search-active .control .btn-material {
+    transform: scale(70);
+}
+
+body.search-active .control .icon-material-search {
+    opacity: 0;
+}
+
+
+/* Close Icon */
+
+.icon-close {
+    position: fixed;
+    top: 30px;
+    left: 30px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 24px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.icon-close:hover {
+    transform: rotate(0);
+}
+
+
+/* Search Input */
+
+.search-input {
+    height: 80px;
+    position: absolute;
+    top: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.search-input input {
+    color: #fff;
+    border: 0;
+    background: transparent;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    outline: 0;
+    font-weight: 200;
+    border-bottom: 2px solid #fff;
+}
+
+.search-input ::-webkit-input-placeholder {
+    color: #EEE;
+}
+
+.search-input :-moz-placeholder {
+    color: #EEE;
+    opacity: 1;
+}
+
+.search-input ::-moz-placeholder {
+    color: #EEE;
+    opacity: 1;
+}
+
+.search-input :-ms-input-placeholder {
+    color: #EEE;
+}
+
+
+/* Control btn */
+
+.control {
+    cursor: pointer;
+}
+
+.control .btn-material {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    outline: 0;
+    right: 30%;
+    transform-origin: 50%;
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: rgba(61, 66, 71, .9);
+}
+
+.control .icon-material-search {
+    position: absolute;
+    top: 2px;
+    right: 16px;
+    transition: opacity 0.3s ease-in-out;
+    line-height: 2.9rem;
+}
+
+@media only screen and (max-width: 575px) {
+    .control .btn-material {
+        right: 13%;
+    }
+}
